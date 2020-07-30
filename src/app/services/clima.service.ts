@@ -10,7 +10,7 @@ export class ClimaServices {
   public apiKey: string = "e96d568a615a60b3d9b70f9e60574994";
 
   constructor(private http:HttpClient) { 
-    this.uri = `http://api.openweathermap.org/data/2.5/weather?units=metric&q=asuncion,py&appid=${this.apiKey}`
+    this.uri = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=asuncion,py&appid=${this.apiKey}`
   };
 
   getClima(){
