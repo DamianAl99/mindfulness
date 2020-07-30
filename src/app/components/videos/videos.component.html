@@ -1,0 +1,14 @@
+<div class="content-videos">
+
+    <div class="videos" *ngIf = 'videos'>
+        <div class="videos-title">
+            <h2>Videos para Empezar en la Meditación</h2>
+        </div>
+        <div class="videos-tutoriales">
+            <a href="{{video.link}}"  *ngFor = "let video of videos">
+                <span>{{video.title}}</span>
+            </a>
+        </div>
+    </div>
+
+</div>

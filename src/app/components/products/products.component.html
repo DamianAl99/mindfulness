@@ -1,0 +1,24 @@
+<div class="content-productos">
+    <div class="productos">
+        <div class="producto-title">
+            <h2>Productos para Practicar la Meditación</h2>
+        </div>
+
+        <div class="productos-item" *ngFor="let producto of productos">
+            <h3>{{producto.title}}</h3>
+            <div class="img">
+                <img src="{{producto.img}}" alt="">
+            </div>
+            <div class="precio">
+                <p class="a">Comprar</p>
+                <p class="b"></p>
+                <p>{{producto.precio}}(aprox.)</p>
+            </div>
+        </div>
+
+        <div class="btn btn-practicar" [routerLink]="['/centros']">
+            <p>Centros</p>
+        </div>
+
+    </div>
+</div>

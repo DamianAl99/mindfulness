@@ -1,0 +1,734 @@
+:root{
+    --fonts: 'Mulish', sans-serif;
+    --primaryColor: rgba(32, 33, 97, 0.8);
+    --colorBtn: rgba(22, 160, 133, 1);
+    --colorHover: rgba(22, 160, 133, 0.5);
+    --textColor: rgb(3, 2, 54);
+    --img: url("../img/landscape-1844226.png");
+
+}
+
+/*reset*/
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/*estilos generales*/
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: var(--img);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    font-family: var(--fonts);
+    font-size: 14px;
+    color: var(--textColor);
+}
+.active{
+    border-bottom: 4px solid var(--colorBtn);
+    animation: active 0.5s linear;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.content-principal{
+    background: transparent;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: 44;
+}
+.btn{
+    width: 150px;
+    padding: 10px;
+    background: var(--colorBtn);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.btn:hover,
+.btn:active,
+.btn:focus{
+    /*box-shadow: inset 2px -2px 2px black;*/
+    transform: perspective(40px)
+                rotateX(10deg);
+}
+h2{
+    font-size: 1.2em;
+    text-align: center;
+    background: pinkk;
+}
+
+
+
+/*cabecera, menu*/
+nav{
+    background: #7F7FD5;  
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); 
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    opacity: 0;
+    transition: 0.5s all;
+    color: white;
+    z-index: 99;
+}
+.showMenu{
+    opacity: 1;
+    display: block;
+}
+
+
+
+
+/*icono para el menu animado*/
+.icon{
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
+    background: redd;
+    cursor: pointer;
+    z-index: 99;
+}
+.icon .a, .b, .c{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: black;
+    margin-top: 6px;
+    transition: .5s all;
+}
+
+.aa{/*es la raya del menu*/
+    position: absolute;
+    top: 10.5px;
+    transform: rotate(40deg);
+}
+.ab{
+    display: none;
+}
+.ac{
+    position: absolute;
+    top: 10.5px;
+    transform: rotate(-40deg);
+}
+
+
+
+
+/*logo del menu*/
+nav .logo{
+    width: 100%;
+    height: 100px;
+    background: pinkk;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+nav .logo h1{
+    text-transform: uppercase;
+    font-size: 1.9em;
+}
+
+/*menu*/
+nav .menu{
+    width: 100%;
+    background: redd;
+}
+nav .menu ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    background: orangee;
+}
+nav .menu ul li{
+    text-align: center;
+    background: greenn;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+
+
+
+/*home component*/
+.content-home{
+    background: pinkk;
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+.content-home .home-presentacion{
+    width: 95%;
+    height: 100vh;
+    margin: auto;
+    background: redd;
+    position: relative;
+    transition: 0.5s all;
+}
+.content-home .home-presentacion .pres-content{
+    background: orangee;
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-rows: 40px 40px 40px;
+    grid-gap: 2px;
+    position: absolute;
+    bottom: 0px;
+}
+.content-home .home-presentacion .pres-content .pres-titulo, .pres-frase{
+    background: greenn;
+    display: grid;
+    align-items: flex-end;
+}
+.pres-titulo h1{
+    font-size: 1.2em;
+    font-weight: normal;
+}
+.pres-frase span{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.pres-perfil{/*orden para la foto y el nombre*/
+    display: grid;
+    align-items: center;
+    grid-template-columns: 70px 1fr;
+    grid-gap: 2px;
+    background: greenn;
+}
+.pres-perfil .perfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background: green;
+}
+.pres-perfil .perfil img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    transform: scaleX(1);
+}
+.pres-perfil h2{
+    font-size: 1em;
+    font-weight: normal;
+    text-align: left;
+}
+
+
+
+
+
+.content-home .home-principal{
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 100vh;
+    transition: 0.5s all;
+}
+.showInfo.showInfo{
+    top: 0;
+}
+.showPres{
+    opacity: 0;
+}
+.content-home .home-principal .info{/*contenedor de la recomendacion y la info*/
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.content-home .home-principal .info .prin-recomendacion{
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 8px;
+}
+.content-home .home-principal .prin-recomendacion p{
+    padding: 15px;
+    font-size: 0.9em;
+    text-align: left;
+    font-weight: normal;
+}
+
+.content-home .home-principal .prin-info{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background: orangee;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    align-items: center;
+}
+.content-home .home-principal .prin-info span{
+    background: rgba(3, 2, 46, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+
+
+
+
+/*contenido de ejercicios*/
+.content-ejercicios{
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    background: pinkk;
+}
+.content-ejercicios .ejercicios{
+    width: 80%;
+    height: auto;
+    padding-top: 70px;
+    margin: auto;
+    background: redd;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.content-ejercicios .ejercicios h2{
+    grid-column: 1/2;
+    margin-bottom: 20px;
+}
+.content-ejercicios .ejercicios .ejercicio{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    box-shadow: 0 0 5px black;
+    padding: 20px;
+    cursor: pointer;
+}
+.content-ejercicios .ejercicios .ejercicio a{
+    color: var(--textColor);
+}
+.content-ejercicios .ejercicios .ejercicio:hover,
+.content-ejercicios .ejercicios .ejercicio:active{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 8px black;
+}
+
+
+
+
+
+
+/*contenido detalles*/
+.content-detallesEjercicio{
+    width: 100%;
+    background: pinkk;
+    height: auto;
+    padding-bottom: 20px;
+}
+.content-detallesEjercicio .icon-volver{
+    background: var(--primaryColor);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 100px;
+    z-index: 44;
+    transition: 0.2s all;
+}
+.content-detallesEjercicio .icon-volver i{
+    color: black;
+    font-size: 2em;
+    margin-top: 5px;
+    margin-left: -2px;
+}
+.content-detallesEjercicio .icon-volver:active{
+    transform: rotateX(90deg)
+                perspective(50px);
+}
+.content-detallesEjercicio .detallesEjercicio {
+    width: 90%;
+    height: auto;
+    background: redd;
+    margin: auto;
+    padding-top: 70px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    position: relative;
+}
+.content-detallesEjercicio .detallesEjercicio .detallesEjercicio-img{
+    width: 250px;
+    height: 250px;
+    background: orangee;
+    margin: auto;
+    border-radius: 9px;
+    overflow: hidden;
+}
+.content-detallesEjercicio .detallesEjercicio .detallesEjercicio-img img{
+    width: 100%;
+    height: 100%;
+}
+.content-detallesEjercicio .detallesEjercicio .detallesEjercicio-info{
+    width: 95%;
+    background: rgba(3, 2, 46, 0.2);
+    box-shadow: 0 0 5px black;
+    margin: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0 5px 0 5px;
+}
+.content-detallesEjercicio .detallesEjercicio .detallesEjercicio-info h2{
+    margin-bottom: 10px;
+}
+.content-detallesEjercicio .detallesEjercicio .detallesEjercicio-info p{
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+
+
+
+
+
+/*contenidos de videos*/
+.content-videos{
+    width: 100%;
+    height: auto;
+    background: pinkk;
+    position: relative;
+}
+.content-videos .videos{
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    background: redd;
+    padding-top: 80px;
+}
+.content-videos .videos .videos-tutoriales{
+    width: 100%;
+    height: auto;
+    background: orangee;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    align-items: center;
+}
+.content-videos .videos .videos-title h2{
+    margin-bottom: 30px;
+}
+.content-videos .videos .videos-tutoriales a{
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1.1em;
+    display: grid;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 0 4px black;
+    color: var(--textColor);
+}
+
+
+
+
+
+
+
+/*contenedor de productos*/
+.content-productos{
+    width: 100%;
+    height: auto;
+    background: pinkk;
+    position: relative;
+}
+.content-productos .productos{
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    height: auto;
+    padding-top: 80px;
+    background: redd;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.content-productos .productos .producto-title{
+    margin-bottom: 40px;
+}
+.content-productos .productos .productos-item{
+    width: 90%;
+    height: 450px;
+    margin: auto;
+    background: orangee;
+}
+.content-productos .productos .productos-item h3{
+    text-align: center;
+    font-size: 1em;
+}
+.content-productos .productos .productos-item .img{
+    width: 100%;
+    height: 85%;
+    background: greenn;
+    border-radius: 2px;
+    box-shadow: 0 0 4px black;
+}
+.content-productos .productos .productos-item .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+.content-productos .productos .productos-item .precio{
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    background: pinkk;
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    grid-gap: 2px;
+}
+.content-productos .productos .productos-item .precio p{
+    background: redd;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 0.8em;
+    text-align: center;
+}
+.content-productos .productos .productos-item .precio p.a{/*comprar*/
+    background: orange;
+    font-size: 1em;
+    cursor: pointer;
+}
+.content-productos .productos .productos-item .precio p.b{/*div medio*/
+    opacity: 0;
+}
+
+
+
+
+
+/*contenido de centros*/
+.content-centros{
+    width: 100%;
+    height: auto;
+    background: pinkk;
+}
+.content-centros .centros{
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    background: redd;
+    padding-top: 80px;
+}
+.content-centros .centros .centros-webs{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    background: orangee;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 20px;
+}
+.content-centros .centros .centros-webs .web{
+    padding: 40px;
+    text-align: center;
+    color: var(--textColor);
+    border-radius: 4px;
+    background: var(--primaryColor);
+    font-size: 1.2em;
+}
+.content-centros .centros .centros-webs a{
+    color: var(--textColor);
+}
+
+
+
+
+
+
+
+
+
+
+/*tablets*/
+@media only screen and (min-device-width : 440px){
+    /*home*/
+    .content-home .home-principal .prin-recomendacion p{
+        font-size: 1.1em;
+    }
+
+    .content-home .home-principal .prin-info span{
+        background: rgba(3, 2, 46, 0.2);
+        border-radius: 8px;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    /*videos*/
+    .content-videos .videos .videos-tutoriales a{
+        font-size: 1.2em;/*es la letra en el div de videos*/
+    }
+}
+
+
+
+
+@media only screen and (min-device-width : 640px){
+    nav{
+        width: 100%;
+        height: 60px;
+        background: var(--primaryColor);
+        opacity: 1;
+        display: block;
+        z-index: 99;
+        border-radius: 0 0 10px 10px;
+        position: absolute;
+        top: 0;
+    }
+    .icon{
+        display: none;
+    }
+    nav .logo{
+        width: 20%;
+        height: 60px;
+        position: absolute;
+        left: 10px;
+    }
+    nav .menu{
+        width: 70%;
+        height: 60px;
+        position: absolute;
+        right: 10px;
+    }
+    nav .menu ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 2px;
+        height: 60px;
+    }
+    nav .menu ul li{
+        font-size: 1em;
+    }
+
+    /*home*/
+    /*presentacion*/
+    .pres-frase span{
+        font-size: 1.9em;
+        font-weight: bold;
+    }
+    /*info*/
+    .content-home .home-principal .info .prin-recomendacion{
+        margin-top: 90px;
+    }
+    .content-home .home-principal .prin-recomendacion p{
+        font-size: 1.2em;
+    }
+
+    .content-home .home-principal .prin-info span{
+        background: rgba(3, 2, 46, 0.2);
+        border-radius: 8px;
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    /*ejercicios*/
+    .content-ejercicios .ejercicios{
+        grid-template-columns: 1fr 1fr;
+    }
+    .content-ejercicios .ejercicios h2{
+        grid-column: 1/3;
+    }
+
+
+    /*detalles*/
+    .content-detallesEjercicio .detallesEjercicio {
+        width: 90%;
+        grid-template-columns: 320px 1fr;
+        grid-template-rows: 1fr;
+        padding-top: 90px;
+        align-items: top;
+    }
+    .content-detallesEjercicio .icon-volver{
+        top: 60px;
+        left: 0;
+    }
+    .content-detallesEjercicio .detallesEjercicio .detallesEjercicio-img{
+        width: 300px;
+        height: 300px;
+        margin-top: 0;
+    }
+    .content-detallesEjercicio .detallesEjercicio .detallesEjercicio-info{
+        width: 100%;
+    }
+    .content-detallesEjercicio .detallesEjercicio .detallesEjercicio-info p{
+        text-align: justify;
+        font-size: 1.2em;
+    }
+
+    /*videos*/
+    .content-videos .videos .videos-tutoriales a{
+        height: 200px;
+        font-size: 1.8em;
+    }
+
+    /*productos*/
+    .content-productos .productos{
+        width: 100%;
+        height: auto;
+        padding-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .content-productos .productos .producto-title{
+        grid-column: 1/3;
+    }
+}
+
+
+
+
+/*notebooks pc*/
+@media only screen and (min-device-width : 940px){
+     /*ejercicios*/
+     .content-ejercicios .ejercicios{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .content-ejercicios .ejercicios h2{
+        grid-column: 1/4;
+    }
+
+    /*videos*/
+    .content-videos .videos .videos-tutoriales{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+
+@keyframes active{
+    0%{
+        background: var(--colorBtn);
+        transform: perspective(50px)
+                   rotateX(20deg);
+    }
+}

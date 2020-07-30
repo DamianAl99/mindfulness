@@ -1,0 +1,11 @@
+<div class="content-ejercicios">
+    <div class="ejercicios">
+        <h2>Empezamos con las Practicas</h2>
+        <div class="ejercicio" *ngFor='let ejercicio of ejercicios, index as i'>
+            <a [routerLink]="['/detalles-ejercicios', i]">
+                <h3>{{ejercicio.title}}</h3>
+                <p>{{ejercicio.subTitle}}</p>
+            </a>
+        </div>
+    </div>
+</div>

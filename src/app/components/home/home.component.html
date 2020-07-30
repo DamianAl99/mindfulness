@@ -1,0 +1,43 @@
+<div class="content-home">
+
+    <div class="home-presentacion" [ngClass]="{'showPres': statusInfo == true}">
+        <div class="pres-content">
+            <div class="pres-titulo">
+                <h1>MEDITACIóN</h1>
+            </div>
+            <div class="pres-frase">
+                <span>"Jamás Pares de Aprender"</span>
+            </div>
+            <div class="pres-perfil">
+                <div class="perfil">
+                    <img src="../../../assets/img/damianB.jpg" alt="">
+                </div>
+                <h2>by Damian Almada</h2>
+            </div>
+            <div class="btn btn-empezar" (click)="info()">
+                <p>Empezar</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="home-principal" [ngClass]="{'showInfo': statusInfo == true}">
+        <div class="info">
+                <div class="prin-recomendacion">
+                    <p>Uff, Ahora hace {{temperatura}}c° de temperatura, te recomendamos Practicar {{meditacion}}, {{sensacion}} </p>
+                </div>
+                <div class="prin-info">
+                    
+                    <h2>Porqué es tan Importante la Meditación?</h2>
+                    <span>
+                        Como se suele decir, cada ser humano es un mundo y, en efecto, la meditación permite descubrir ese mundo interior, tan extenso y diverso como el mundo exterior, pero a la vez más calmo y personal.
+                        uno de los principales beneficios que brinda la meditación es la posibilidad de conocerse uno mismo, o mejor dicho, conocerse más profundamente, acceder a sensaciones, tanto físicas como emocionales, que creen un vínculo mucho más fuerte con el yo interior, obteniendo así una mejor inteligencia emocional, un equilibrio en el carácter y una mayor comprensión de los objetivos y motivaciones que nos mueven diariamente.
+                        Una vez que sepamos esto ya debemos EMPEZAR a Practicar.
+                    </span>
+                </div>
+                <div class="btn btn-practicar" [routerLink]="['/ejercicios']">
+                    <p>Practicar</p>
+                </div>
+        </div>
+    </div>
+</div>
