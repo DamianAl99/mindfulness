@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClimaServices } from '../../services/clima.service';
-
+//https://api.jikan.moe/v3/anime/1
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
