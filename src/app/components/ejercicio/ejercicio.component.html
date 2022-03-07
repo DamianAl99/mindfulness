@@ -1,0 +1,23 @@
+<div class="content-detallesEjercicio" >
+    <div class="icon-volver" [routerLink]="['/ejercicios']">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="detallesEjercicio" *ngIf = 'item'>
+
+        <div class="detallesEjercicio-img">
+            <img loading="lazy" src="{{item.img}}" alt="Meditacion">
+        </div>
+
+        <div class="detallesEjercicio-info">
+            <h2>{{item.title}}</h2>
+            <p>{{item.descripcion}}</p>
+        </div>
+
+    </div>
+    <div class="btn btn-practicar" [routerLink]="['/videos']">
+        <p>Videos</p>
+    </div>
+    <div class="btn btn-practicar" [routerLink]="['/ejercicios']">
+        <p>Volver</p>
+    </div>
+</div>
