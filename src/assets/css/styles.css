@@ -22,8 +22,11 @@ body{
     height: 100vh;
     background-image: var(--img);
     background-attachment: fixed;
+    -webkit-background-attachment: fixed;
     background-position: center center;
+    -webkit-background-position: center center;
     background-size: cover;
+    -webkit-background-size: cover;
     font-family: var(--fonts);
     font-size: 14px;
     color: var(--textColor);
@@ -196,14 +199,17 @@ nav .menu ul li{
 }
 .content-home .home-presentacion .pres-content .pres-titulo, .pres-frase{
     text-align: center;
+    padding: 10px;
+    margin: auto;
 }
 .pres-titulo h1{
-    font-size: 1.5em;
-    font-weight: normal;
+    font-size: 2.5em;
+    font-weight: bold;
 }
 .pres-frase span{
     font-size: 1.2em;
     font-weight: normal;
+    display: block;
 }
 .pres-content .btn-empezar{
     margin-top: 150px;
